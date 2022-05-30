@@ -35,16 +35,21 @@ for x in range(128):
         add(formated.strip("'"))
     else: #IF 2
       add(ascii)
+    #adicionando a coluna de descrição
     if x != 127:
       add(descricao(temp[-1]))
     else:
       add('delete')
-
-  else: #IF 1
+  else: #IF 1; espaços vazios e descrição
     add(' ')
     add('não usamos')
+  #enfim adicionamos a lista temp como se fosse uma linha e depois limpamos ela
   linhas.append(temp[:])
   temp.clear()
+  
+#agora é só colocar no congelador
+data.update({'Tabela ASCII': linhas}) #como na biblioteca que usei é necessário passar um dicionário como parâmetro,
+#eu estou passando minha lista de listas como valor da chave 'Tabela ASCII' que logo mais séra o título da nossa planilha
 
-data.update({'Tabela ASCII': linhas})
+#e tá pronto o sorvetinho
 save_data('teste.ods', data)
