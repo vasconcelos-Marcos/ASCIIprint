@@ -46,10 +46,10 @@ for x in range(128):
   #enfim adicionamos a lista temp como se fosse uma linha e depois limpamos ela
   linhas.append(temp[:])
   temp.clear()
-  
+
 #agora é só colocar no congelador
 data.update({'Tabela ASCII': linhas}) #como na biblioteca que usei é necessário passar um dicionário como parâmetro,
 #eu estou passando minha lista de listas como valor da chave 'Tabela ASCII' que logo mais séra o título da nossa planilha
 
 #e tá pronto o sorvetinho
-save_data('teste.ods', data)
+save_data('ASCII_table.ods', data)
